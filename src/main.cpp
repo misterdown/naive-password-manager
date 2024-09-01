@@ -47,7 +47,7 @@ static ::std::string get_self_path() {
 static ::std::stringstream open_as_string_stream(const ::std::string& filePath) {
     ::std::ifstream file(filePath);
     if (!file.is_open()) {
-        ::std::cout << "Failed to open file named " << filePath << '\n';
+        ::std::cout << "failed to open file named " << filePath << '\n';
         exit(1);
     }
     ::std::stringstream strStream;
@@ -57,7 +57,7 @@ static ::std::stringstream open_as_string_stream(const ::std::string& filePath) 
 static void write_service_passwords(const ::std::string& filePath, const ::std::vector<::std::pair<::std::string, ::std::string>>& vec) {
     ::std::ofstream file(filePath);
     if (!file.is_open()) {
-        ::std::cout << "Failed to open file named " << filePath << '\n';
+        ::std::cout << "failed to open file named " << filePath << '\n';
         exit(1);
     }
     for (const auto& i : vec)
@@ -146,7 +146,7 @@ static void edit_password(const ::std::string& filePath, int argc, char** argv) 
 }
 static void delete_password(const ::std::string& filePath, int argc, char** argv) {
     if (argc != 1) {
-        ::std::cout << "Wrong arguments count.\n" << usage_str();
+        ::std::cout << "wrong arguments count.\n" << usage_str();
         exit(1);
     }
     ::std::cout << "are you sure?[y/n]";
@@ -186,7 +186,7 @@ static void delete_password(const ::std::string& filePath, int argc, char** argv
 
 static void new_password(const ::std::string& filePath, int argc, char** argv) {
     const auto checkServiceExist = [](const ::std::string& filePath, const ::std::string& serviceName) {
-    ::std::ifstream file(filePath, ::std::ios_base::in);
+    ::std::ifstream file(filePath, ::std::ios_base::in | ::std::ios_base::app);
         if (!file.is_open()) {
             ::std::cout << "falied to open file named " << filePath << ".\n";
             exit(1);
