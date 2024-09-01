@@ -43,9 +43,7 @@ passwordmanager -l
   - C++11 or later
 - CMake
 ```sh
-mkdir build
-cd build
-cmake ..
+cmake -G "Unix Makefiles" .
 make
 ```
 
