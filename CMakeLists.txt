@@ -5,7 +5,7 @@ project(PasswordManager)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)s
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add the executable
 add_executable(passwordmanager src/main.cpp)
